@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  tf-plan:
+  tf-apply:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -28,6 +28,6 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
       - name: Terraform init
         run: terraform init
-      - name: Terraform plan
+      - name: Terraform apply
         run: |
-          terraform plan
+          terraform apply -auto-approve -input=false
