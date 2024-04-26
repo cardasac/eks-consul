@@ -1,5 +1,5 @@
 resource "kubernetes_manifest" "service_intentions" {
-  depends_on = [ helm_release.hashicorp ]
+  depends_on = [helm_release.hashicorp]
   #   manifest = yamldecode(file("intentions.yaml"))
   manifest = {
     apiVersion = "consul.hashicorp.com/v1alpha1"
